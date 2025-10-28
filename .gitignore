@@ -1,0 +1,8 @@
+# Soubory, které se nemají nahrávat do Gitu
+
+# Skutečný konfigurační soubor s hesly
+api/database.php
+
+# Logy a dočasné soubory
+*.log
+*.tmp

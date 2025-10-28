@@ -1,1 +1,172 @@
-/* Add styles here */
+/* === ZÁKLADNÍ STYLY (převzato) === */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding-top: 20px; /* Přidán padding nahoře */
+}
+
+.login-container, .welcome-container, .admin-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Rozšířeno pro welcome a admin */
+    margin: 20px auto; /* Centrování a mezera */
+    text-align: center;
+}
+
+.login-header h1, .welcome-header h1, .admin-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-header p, .welcome-header p, .admin-header p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.error-message, .success-message {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #d93025;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input, .form-group textarea {
+    width: calc(100% - 24px); /* Šířka mínus padding */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+}
+
+/* === NOVÉ STYLY pro welcome.php a admin.php === */
+
+.welcome-header a, .admin-header a {
+    color: #4b6cb7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-link-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.admin-link {
+    background-color: #ffc107; /* Výstražná žlutá */
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 50px; /* Kulaté rohy */
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.admin-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.admin-link .icon {
+    font-size: 20px;
+}
+
+.posts-container {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.posts-container h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 25px;
+    overflow: hidden; /* Zajistí, že obrázek respektuje border-radius */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.post-card img {
+    width: 100%;
+    height: 250px; /* Pevná výška pro obrázky */
+    object-fit: cover; /* Ořízne obrázek, aby vyplnil prostor */
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.post-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.admin-form {
+    margin-top: 30px;
+}

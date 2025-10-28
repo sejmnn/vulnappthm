@@ -1,0 +1,23 @@
+# Povolení modulu pro přepisování URL
+RewriteEngine On
+
+# Nastavení výchozí stránky na 'login'
+DirectoryIndex login.html
+
+# -- Pravidla pro skrytí přípony .html --
+
+# 1. Podmínka: Ujistíme se, že požadavek není na existující soubor
+RewriteCond %{REQUEST_FILENAME} !-f
+# 2. Podmínka: Ujistíme se, že požadavek není na existující adresář
+RewriteCond %{REQUEST_FILENAME} !-d
+# 3. Pravidlo: Přepíšeme požadavek tak, aby interně hledal soubor s příponou .html
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# -- Pravidla pro skrytí přípony .php v adresáři /api/ --
+
+# 1. Podmínka: Ujistíme se, že požadavek začíná na /api/
+RewriteCond %{REQUEST_URI} ^/api/
+# 2. Podmínka: Ujistíme se, že požadavek není na existující soubor
+RewriteCond %{REQUEST_FILENAME} !-f
+# 3. Pravidlo: Přepíšeme požadavek v /api/ tak, aby interně hledal soubor s příponou .php
+RewriteRule ^api/([^/]+)/?$ api/$1.php [L]

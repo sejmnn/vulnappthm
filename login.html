@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studentský Portál</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Studentský Portál</h1>
+            <p>Přihlaste se pro přístup ke svému účtu</p>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <form action="/api/login.php" method="post" class="login-form">
+            <div class="form-group">
+                <label for="username">Uživatelské jméno</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Heslo</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Přihlásit se</button>
+        </form>
+
+        <!-- Odkaz na registraci byl odstraněn -->
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('msg');
+            const msgType = urlParams.get('type');
+            if (msg) {
+                const messageContainer = document.getElementById('message');
+                messageContainer.textContent = decodeURIComponent(msg);
+                messageContainer.className = 'message ' + (msgType === 'success' ? 'success-message' : 'error-message');
+            }
+        });
+    </script>
+</body>
+</html>

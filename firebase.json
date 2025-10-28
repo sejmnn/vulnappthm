@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": ".",
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/api/login",
+        "function": "api/login.php"
+      },
+      {
+        "source": "/api/register",
+        "function": "api/register.php"
+      }
+    ]
+  }
+}
