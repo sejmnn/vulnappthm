@@ -4,5 +4,5 @@
 api/database.php
 
 # Logy a dočasné soubory
-*.log
+
 *.tmp

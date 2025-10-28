@@ -1,0 +1,5 @@
+# LOG: Provedena migrace databáze
+# TIMESTAMP: 2024-05-20 04:30:00
+# INFO: Starý systém byl odstaven. Všichni uživatelé byli migrováni.
+# POZNÁMKA: Je potřeba ověřit, zda má uživatel j.novak správně nastavená oprávnění. Jeho účet se zdá být problematický.
+# -- END OF LOG --
